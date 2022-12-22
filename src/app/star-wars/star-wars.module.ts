@@ -5,16 +5,8 @@ import { PlanetListComponent } from './planet-list/planet-list.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 
 @NgModule({
-  declarations: [
-    PlanetsComponent,
-    PlanetListComponent,
-    PlanetDetailComponent
-  ],
-  imports: [
-    CommonModule,
-  ],
-  exports: [
-    PlanetsComponent,
-  ]
+  declarations: [PlanetsComponent, PlanetListComponent, PlanetDetailComponent],
+  imports: [CommonModule],
+  exports: [PlanetsComponent],
 })
-export class StarWarsModule { }
+export class StarWarsModule {}
