@@ -1,4 +1,4 @@
-export interface IPlanet {
+export interface Planet {
   name: string;
   rotation_period: string;
   orbital_period: string;

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlanet } from './star-wars.interface';
+import { Planet } from './star-wars.interface';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class PlanetsService {
   constructor(private http: HttpClient) {
     // Example on getting planets from swapi api
     this.getPlanets().subscribe((planets: any) => {
-      console.log(planets);
-      return planets;
+      console.log(planets.results);
     });
   }
-  // https://angular.io/guide/glossary#observable
-  // A producer of multiple values, which it pushes to subscribers. Used for asynchronous event handling throughout Angular.
-  getPlanets(): Observable<any> {
+
+  getPlanets(): Observable<Planet[]> {
     const planetApiUrl = 'https://swapi.dev/api/planets';
-    return this.http.get<IPlanet>(planetApiUrl);
+    console.log(planetApiUrl);
+    return this.http.get<Planet[]>(planetApiUrl);
   }
 }
