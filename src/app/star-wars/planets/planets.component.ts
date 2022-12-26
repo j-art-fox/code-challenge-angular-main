@@ -232,6 +232,7 @@ export class PlanetsComponent implements OnInit {
   //   console.log(this.data);
   // }
 
+  data = [];
   constructor(private planetsService: PlanetsService) {
     // planetsService.getPlanets().subscribe((data: any) => {
     //   this.data = data;
