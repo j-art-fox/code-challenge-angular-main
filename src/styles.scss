@@ -22,9 +22,12 @@
 };
 
 .bg-gradient {
-  
     background: linear-gradient(90deg, rgb(44, 4, 69) 0%, rgb(98, 1, 30) 50%),;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+body {
+background-color: black;
+}
