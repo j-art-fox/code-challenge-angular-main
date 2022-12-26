@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         bungee: ["bungee", "sanserif"],
+        chakrapetch: ["Chakra Petch", "sansserif"],
       },
     },
   },

@@ -1,8 +1,6 @@
-<h1>Star Wars Planets</h1>
-<div>
-  <ul *ngFor="let i of data">
-    <li>{{ i.name }}</li>
-  </ul>
+<div class="w-screen h-screen">
+  <app-header></app-header>
+  <app-planet-list></app-planet-list>
+  <app-planet-detail></app-planet-detail>
+  <app-footer></app-footer>
 </div>
-<app-planet-list></app-planet-list>
-<app-planet-detail></app-planet-detail>
