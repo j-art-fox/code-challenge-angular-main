@@ -28,6 +28,13 @@
     background-repeat: no-repeat;
   }
 
+.li-gradient {
+    background: linear-gradient(90deg, rgb(39 39 42) 10%, rgb(76, 76, 82) 60%),;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
 body {
-background-color: black;
+background-color: rgb(214, 214, 214);
 }
