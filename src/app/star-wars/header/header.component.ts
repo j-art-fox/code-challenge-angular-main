@@ -19,8 +19,10 @@ export class HeaderComponent implements OnInit {
       class: 'class="mr-5 hover:text-gray-900"',
     },
   ];
-
-  constructor() {}
+  changeLogo: boolean;
+  constructor() {
+    this.changeLogo = false;
+  }
 
   ngOnInit(): void {}
 }
