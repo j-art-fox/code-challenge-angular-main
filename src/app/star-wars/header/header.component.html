@@ -13,30 +13,61 @@
     <nav
       class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
     >
-      <ul *ngFor="let i of navData">
+      <ul>
         <li>
           <button
-          id="dropdownDefault" data-dropdown-toggle="dropdown"
-          type="button"
-          (mouseenter)="showAndHide()"
-          (click)="showAndHide()"
+            id="dropdownDefault"
+            data-dropdown-toggle="dropdown"
+            type="button"
+            href="/"
             class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
-            >{{ i.text }}</button
           >
-          <div id="dropdown" (mouseleave)="showAndHide()" class={{dropDownClass}}><ul class="py-1  text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-            <li>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-            </li>
-          </ul></div>
+            home
+          </button>
+          <button
+            id="dropdownDefault"
+            data-dropdown-toggle="dropdown"
+            type="button"
+            (mouseenter)="showAndHide()"
+            (mouseleave)="showAndHide()"
+            (click)="showAndHide()"
+            class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
+          >
+            planets
+          </button>
+          <div
+            id="dropdown"
+            (mouseleave)="showAndHide()"
+            class="{{ dropDownClass }}"
+          >
+            <ul
+              *ngFor="let planet of planets"
+              class="py-1 text-md text-amber-300"
+              aria-labelledby="dropdownDefault"
+            >
+              <li
+                class="flex flex-row ml-2 hover:translate-x-2 ease-linear duration-200"
+              >
+                <img
+                  class="h-10"
+                  src="../../../assets/images/{{ planet.name }}.png"
+                />
+                <a
+                  href="#{{ planet.name }}"
+                  class="block hover:text-amber-200 hover:font-semibold py-2 px-4"
+                  >{{ planet.name }}</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button
+            id="dropdownDefault"
+            data-dropdown-toggle="dropdown"
+            type="button"
+            class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
+          >
+            about
+          </button>
         </li>
       </ul>
     </nav>
