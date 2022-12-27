@@ -22,10 +22,10 @@
 };
 
 .bg-gradient {
-    background: linear-gradient(90deg, rgb(44, 4, 69) 0%, rgb(98, 1, 30) 50%),;
+    background: linear-gradient(90deg, rgba(44, 4, 69, 0.878) 0%, rgba(98, 1, 30, 0.96) 50%), url(./assets/images/hexegons1.jpg);
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size:auto;
+    background-repeat: repeat;
   }
 
 .li-gradient {
