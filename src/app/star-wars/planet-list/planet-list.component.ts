@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PlanetsService } from 'src/app/star-wars/planets.service';
 
 @Component({
@@ -7,11 +7,10 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
   styleUrls: ['./planet-list.component.scss'],
 })
 export class PlanetListComponent implements OnInit {
+  @Input() planetData: any = [];
   title = 'planets';
   data2: any = [];
-  constructor(private planetsService: PlanetsService) {
-    console.log(this.data2);
-  }
+  constructor(private planetsService: PlanetsService) {}
 
   ngOnInit(): void {
     this.planetsService.getPlanets().subscribe((data: any) => {

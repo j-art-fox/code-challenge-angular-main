@@ -2,18 +2,20 @@
   <div class="w-1/2">
     <!-- <div class="absolute inset-0 w-full h-full bg-gray-900 opacity-50">
     <div class="absolute w-48 h-full bg-green-400 left-0 top-24"> -->
-    <div class="px-4 rounded-tr-xl max-w-min bg-zinc-800">
+    <div class="px-4 rounded-t-xl max-w-min bg-zinc-800">
       <h1 class="text-teal-200 text-xl py-2 font-bungee">{{ title }}</h1>
     </div>
+
     <div class="li-gradient rounded-tr-xl">
-      <ul class="" *ngFor="let i of data2">
+      <ul class="flex flex-row" *ngFor="let i of planetData">
         <li class="text-yellow-300 pl-2 py-2 font-chakrapetch font-bold">
-          {{ i.name }}
+          <img class="max-h-24" src="../../../assets/images/{{ i.name }}.png" />
+          <h1 class="text-lg uppercase text-amber-50">{{ i.name }}</h1>
+          <app-planet-detail
+            [planetDetailsData]="i"
+            class="text-yellow-300 p-2"
+          ></app-planet-detail>
         </li>
-        <app-planet-detail
-          [planetDetailsData]="data2"
-          class="text-yellow-300 p-2"
-        ></app-planet-detail>
         <hr class="border-2 border-yellow-600" />
       </ul>
     </div>

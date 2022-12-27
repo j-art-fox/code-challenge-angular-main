@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 //  implements OnInit
 export class PlanetDetailComponent implements OnInit {
-  @Input() planetDetailsData: any = [];
+  @Input() planetDetailsData: any = {};
 
   constructor() {}
 
