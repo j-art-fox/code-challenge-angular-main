@@ -22,13 +22,13 @@
 };
 
 .bg-gradient {
-    background: linear-gradient(90deg, rgba(44, 4, 69, 0.878) 0%, rgba(98, 1, 30, 0.96) 50%), url(./assets/images/hexegons1.jpg);
+    background: linear-gradient(90deg, rgba(44, 4, 69, 0.927) 0%, rgba(98, 1, 30, 0.96) 50%), url(./assets/images/hexegons1.jpg);
     background-position: center;
     background-size:auto;
     background-repeat: repeat;
   }
 
-.li-gradient {
+.planet-bg {
     background: linear-gradient(90deg, rgba(42, 39, 39, 0.975) 10%, rgba(82, 76, 76, 0.893) 60%), url(./assets/images/stainless-steel.jpg);
     background-position: center;
     background-size: cover;
@@ -36,5 +36,6 @@
   }
 
 body {
-background-color: rgb(214, 214, 214);
+background: linear-gradient(90deg, rgba(240, 240, 240, 0.98) 0%, rgba(220, 220, 220, 0.9) 60%), url(./assets/images/scifitexture1blurred.png);
+
 }

@@ -1,25 +1,30 @@
 <div class="flex justify-center py-8">
-  <div class="w-1/2">
-    <!-- <div class="absolute inset-0 w-full h-full bg-gray-900 opacity-50">
-    <div class="absolute w-48 h-full bg-green-400 left-0 top-24"> -->
+  <div class="w-2/3">
+    <!-- Planet Tab -->
     <div class="px-4 rounded-t-xl max-w-min bg-zinc-800">
       <h1 class="text-teal-200 text-xl py-2 font-bungee">{{ title }}</h1>
     </div>
 
-    <div class="li-gradient rounded-tr-xl">
-      <ul class="flex flex-row" *ngFor="let i of planetData">
+    <div class="planet-bg rounded-tr-xl rounded-b-xl">
+      <ul class="flex flex-col" *ngFor="let i of planetData">
+        <!-- Planet Name and Image -->
         <li class="text-yellow-300 pl-2 py-2 font-chakrapetch font-bold">
-          <img class="max-h-24" src="../../../assets/images/{{ i.name }}.png" />
-          <h1 class="text-lg uppercase text-amber-50">{{ i.name }}</h1>
-          <app-planet-detail
-            [planetDetailsData]="i"
-            class="text-yellow-300 p-2"
-          ></app-planet-detail>
+          <div class="">
+            <img
+              class="max-h-48"
+              src="../../../assets/images/{{ i.name }}.png"
+            />
+            <h1 class="text-lg uppercase text-amber-50 p-2">{{ i.name }}</h1>
+          </div>
+          <!-- Planet Details -->
+          <div class="pl-4">
+            <app-planet-detail
+              [planetDetailsData]="i"
+              class="text-yellow-300"
+            ></app-planet-detail>
+          </div>
         </li>
-        <hr class="border-2 border-yellow-600" />
       </ul>
     </div>
-    <!-- </div>
-  </div> -->
   </div>
 </div>
