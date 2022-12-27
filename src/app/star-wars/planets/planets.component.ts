@@ -7,12 +7,16 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
   styleUrls: ['./planets.component.scss'],
 })
 export class PlanetsComponent implements OnInit {
-  data: any = [];
+  planetData: any = [];
+  peopleData: any = [];
   constructor(private planetsService: PlanetsService) {}
 
   ngOnInit(): void {
-    this.planetsService.getPlanets().subscribe((data: any) => {
-      return (this.data = data.results);
+    this.planetsService.getPlanets().subscribe((planetData: any) => {
+      return (this.planetData = planetData.results);
+    });
+    this.planetsService.getPeople().subscribe((data: any) => {
+      return (this.peopleData = data.results);
     });
   }
 }

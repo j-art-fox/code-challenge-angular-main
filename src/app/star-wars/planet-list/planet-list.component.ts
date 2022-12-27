@@ -8,13 +8,11 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 })
 export class PlanetListComponent implements OnInit {
   @Input() planetData: any = [];
+  @Input() peopleData: any = [];
+
   title = 'planets';
-  data2: any = [];
+
   constructor(private planetsService: PlanetsService) {}
 
-  ngOnInit(): void {
-    this.planetsService.getPlanets().subscribe((data: any) => {
-      return (this.data2 = data.results);
-    });
-  }
+  ngOnInit(): void {}
 }
