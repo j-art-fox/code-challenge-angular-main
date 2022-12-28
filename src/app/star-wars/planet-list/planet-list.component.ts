@@ -1,6 +1,5 @@
-import { Interpolation } from '@angular/compiler';
 import { Component, OnInit, Input } from '@angular/core';
-import { PlanetsService } from 'src/app/star-wars/planets.service';
+import { PlanetsService } from '../planets.service';
 
 @Component({
   selector: 'app-planet-list',
@@ -9,13 +8,9 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 export class PlanetListComponent implements OnInit {
   // inputs data from the planets.component
   @Input() planetData: any = [];
-  @Input() peopleData: any = [];
   // random example of string Interpolation
   title = 'planets';
-
-  constructor(private planetsService: PlanetsService) {
-    console.log(this.planetData);
-  }
-
+  planetActivated = false;
+  constructor(private planetsService: PlanetsService) {}
   ngOnInit(): void {}
 }

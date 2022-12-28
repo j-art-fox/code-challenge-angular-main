@@ -17,6 +17,11 @@ export class PlanetsComponent implements OnInit {
       // tempData uses dummy data to check sort method
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
       tempData = Data.results;
+
+      for (const iterator of tempData) {
+        iterator.active = false;
+      }
+
       tempData.sort(function (a: any, b: any) {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;
@@ -26,6 +31,7 @@ export class PlanetsComponent implements OnInit {
         }
         return 0;
       });
+
       return (this.planetData = tempData);
     });
   }

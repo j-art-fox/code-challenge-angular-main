@@ -14,7 +14,3 @@ export interface Planet {
   edited: string;
   url: string;
 }
-
-export interface People {
-  name: string;
-}

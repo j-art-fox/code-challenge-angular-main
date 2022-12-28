@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PlanetsService } from '../planets.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,9 @@ export class HeaderComponent implements OnInit {
   @Input() planets: any = [];
   planetsDropDown: boolean;
   dropDownClass = 'hidden';
-
   changeLogo: boolean;
-  constructor() {
+
+  constructor(private planetsService: PlanetsService) {
     this.changeLogo = false;
     this.planetsDropDown = false;
   }

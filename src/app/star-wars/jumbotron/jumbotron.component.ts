@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './jumbotron.component.html',
 })
 export class JumbotronComponent implements OnInit {
+  // Array of planet names for pulling up the images of the planets from the assets folder.
   planets: any = [
     { name: 'Alderaan' },
     { name: 'Tatooine' },

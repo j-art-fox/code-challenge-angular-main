@@ -1,9 +1,10 @@
 <div class="flex justify-center py-8">
   <div class="w-4/5 flex flex-wrap justify-between">
-    <!-- JumboTron -->
+    <!-- Jumbotron -->
     <div class="w-full">
       <app-jumbotron></app-jumbotron>
     </div>
+
     <!-- Planet Tab -->
     <div class="w-full mt-20">
       <div class="px-4 mx-auto rounded-xl bg-zinc-800 max-w-min">
@@ -11,11 +12,16 @@
       </div>
     </div>
 
-    <!-- Planet Details -->
-    <div id="card" class="lg:w-1/2 body-font" *ngFor="let i of planetData">
+    <!-- Planet Cards -->
+    <div
+      id="card"
+      class="lg:w-1/2 my-6 md:my-0 body-font"
+      *ngFor="let i of planetData"
+    >
       <div
         class="flex flex-wrap planet-bg md:scale-75 hover:backdrop-brightness-150 shadow-2xl rounded-xl m-2 px-2 sm:-m-4 md:space-y-0 space-y-6"
       >
+        <!-- Planet Image, Name, and breif Description. -->
         <div
           id="{{ i.name }}"
           class="p-4 md:w-1/3 flex flex-col text-center my-auto items-center border-zinc-500 md:border-r-2"
@@ -34,21 +40,16 @@
             >
               {{ i.name }}
             </h1>
-            <p
-              class="leading-relaxed text-base text-amber-100 font-chakrapetch"
-            >
+            <p class="leading-relaxed text-lg text-amber-100 font-chakrapetch">
               The planet known as {{ i.name }}, is a {{ i.terrain }} planet. It
-              is typically quite {{ i.climate }}.
+              is typically {{ i.climate }}.
             </p>
           </div>
         </div>
+
         <!-- Planet Details -->
         <div class="p-4 md:w-2/3 flex flex-col text-left my-auto">
-          <div class="scale-105">
-            <div>
-              <app-planet-detail [planetDetailsData]="i"></app-planet-detail>
-            </div>
-          </div>
+          <app-planet-detail [planetDetailsData]="i"></app-planet-detail>
         </div>
       </div>
     </div>
