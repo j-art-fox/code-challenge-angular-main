@@ -3,7 +3,7 @@
     class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center"
   >
     <a
-      class="flex title-font font-medium justify-center items-center mb-4 md:mb-0"
+      class="flex title-font md:scale-90 font-medium justify-center items-center mb-4 md:mb-0"
     >
       <span
         class="ml-3 text-xl sm:text-2xl md:text-3xl text-yellow-400 font-bungee drop-shadow-md ease-in-out duration-300 hover:scale-105 hover:text-yellow-100"
@@ -22,7 +22,7 @@
             (mouseenter)="showAndHide()"
             (mouseleave)="showAndHide()"
             (click)="showAndHide()"
-            class="bg-zinc-50 p-2 hover:bg-opacity-50 rounded-md bg-opacity-20 mx-4 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
+            class="bg-zinc-50 p-2 mb-4 sm:mb-0 hover:bg-opacity-50 rounded-md bg-opacity-20 mx-4 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
           >
             planet list
           </button>
@@ -58,7 +58,7 @@
     <div
       (mouseenter)="changeLogo = true"
       (mouseleave)="changeLogo = false"
-      class="hidden sm:inline-flex items-center border-0 px-3 focus:outline-none text-base mt-0"
+      class="hidden lg:inline-flex items-center border-0 px-3 focus:outline-none text-base mt-0"
     >
       <img
         *ngIf="!changeLogo"

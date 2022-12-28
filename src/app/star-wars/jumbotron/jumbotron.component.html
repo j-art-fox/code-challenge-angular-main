@@ -10,12 +10,12 @@
     >
       <div class="text-yellow-100">
         <h2
-          class="font-semibold font-bungee text-4xl mb-4 hover:shadow-amber-300"
+          class="text-xl font-semibold font-bungee md:text-2xl lg:text-4xl mb-4 hover:shadow-amber-300"
         >
           welcome
         </h2>
         <h4
-          class="px-24 font-semibold text-yellow-300 shadow-lg font-chakrapetch uppercase text-xl mb-4"
+          class="text-xs sm:text-sm xl:px-24 lg:px-20 md:px-14 font-semibold text-yellow-300 shadow-lg font-chakrapetch uppercase md:text-md lg:text-lg xl:text-xl mb-4"
         >
           The fictional universe of the Star Wars franchise features multiple
           planets and moons. While only the feature films and selected other
@@ -28,7 +28,7 @@
       <ul class="mx-auto grid grid-rows-1 justify-between w-full">
         <li class="hover:shadow-amber-100" *ngFor="let p of planets">
           <img
-            class="h-20 shadow-lg animate-spin-slow ease-in-out duration-200"
+            class="h-6 sm:h-10 md:h-14 lg:h-20 xl:h-24 shadow-lg animate-spin-slow ease-in-out duration-200"
             src="../../../assets/images/{{ p.name }}.png"
           />
         </li>
