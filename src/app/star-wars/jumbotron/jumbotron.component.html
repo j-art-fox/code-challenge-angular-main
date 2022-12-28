@@ -1,0 +1,38 @@
+<div
+  class="p-12 h-96 text-center relative overflow-hidden bg-no-repeat bg-cover rounded-xl"
+>
+  <div
+    class="absolute jumbotron-bg top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+  >
+    <div
+      id="home"
+      class="flex justify-center flex-wrap p-4 items-center h-full"
+    >
+      <div class="text-yellow-100">
+        <h2
+          class="font-semibold font-bungee text-4xl mb-4 hover:shadow-amber-300"
+        >
+          welcome
+        </h2>
+        <h4
+          class="px-10 font-semibold text-yellow-300 shadow-lg font-chakrapetch uppercase text-xl mb-4"
+        >
+          The fictional universe of the Star Wars franchise features multiple
+          planets and moons. While only the feature films and selected other
+          works are considered canon to the franchise since the 2012 acquisition
+          of Lucasfilm by The Walt Disney Company, some canon planets were first
+          named or explored in works from the non-canon Star Wars expanded
+          universe, now rebranded Star Wars Legends.
+        </h4>
+      </div>
+      <ul class="mx-auto grid grid-rows-1 justify-between w-full">
+        <li class="hover:shadow-amber-100" *ngFor="let p of planets">
+          <img
+            class="h-20 shadow-lg animate-spin-slow ease-in-out duration-200"
+            src="../../../assets/images/{{ p.name }}.png"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

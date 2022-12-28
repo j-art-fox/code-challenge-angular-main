@@ -33,7 +33,21 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 490px;
   }
+  .hover-planet-bg {
+    background: linear-gradient(90deg, rgba(76, 70, 70, 0.975) 10%, rgba(133, 124, 124, 0.893) 60%), url(./assets/images/stainless-steel.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 490px;
+  }
+
+  .jumbotron-bg{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.905) 90%), url(./assets/images/space.jpeg);
+    
+  }
+
   .drop-down-bg {
     background: linear-gradient(0deg, rgba(98, 1, 30, .95) 0%, rgba(98, 1, 30, 0.98) 50%), url(./assets/images/scifitexture1blurred.png);
   }

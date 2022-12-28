@@ -9,7 +9,6 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 export class PlanetListComponent implements OnInit {
   @Input() planetData: any = [];
   @Input() peopleData: any = [];
-
   title = 'planets';
 
   constructor(private planetsService: PlanetsService) {}

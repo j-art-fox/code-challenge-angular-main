@@ -5,6 +5,7 @@ import { PlanetListComponent } from './planet-list/planet-list.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 import { FooterComponent } from '../star-wars/footer/footer.component';
 import { HeaderComponent } from '../star-wars/header/header.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HeaderComponent } from '../star-wars/header/header.component';
     PlanetDetailComponent,
     FooterComponent,
     HeaderComponent,
+    JumbotronComponent,
   ],
   imports: [CommonModule],
   exports: [PlanetsComponent],

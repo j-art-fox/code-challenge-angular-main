@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Endor' },
     { name: 'Naboo' },
     { name: 'Coruscant' },
+    { name: 'Kamino' },
   ];
 
   changeLogo: boolean;
