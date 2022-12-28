@@ -1,18 +1,23 @@
 <header class="body-font bg-gradient shadow-lg">
+  <!-- Site Title -->
   <div
     class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center"
   >
-    <a
+    <div
       class="flex title-font md:scale-90 font-medium justify-center items-center mb-4 md:mb-0"
     >
-      <span
+      <h1
         class="ml-3 text-xl sm:text-2xl md:text-3xl text-yellow-400 font-bungee drop-shadow-md ease-in-out duration-300 hover:scale-105 hover:text-yellow-100"
-        >The Star Wars Planet Wiki</span
       >
-    </a>
+        The Star Wars Planet Wiki
+      </h1>
+    </div>
+
+    <!-- Navbar -->
     <nav
       class="sm:mx-auto md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
     >
+      <!-- used <ul> in order to add more navigation options for future development -->
       <ul>
         <li>
           <button
@@ -55,6 +60,8 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Star Wars Logo -->
     <div
       (mouseenter)="changeLogo = true"
       (mouseleave)="changeLogo = false"
