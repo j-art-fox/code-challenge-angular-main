@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
     } else {
       this.planetsDropDown = true;
       this.dropDownClass =
-        'drop-down-bg font-chakrapetch absolute z-10 w-44 translate-x-14 rounded divide-y divide-gray-100 shadow ease-in-out duration:200';
+        'drop-down-bg font-chakrapetch absolute z-10 w-44 -translate-x-2 outline-rose-200 rounded-xl divide-y divide-rose-900 shadow ease-in-out duration:200';
     }
   }
 

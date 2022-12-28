@@ -1,17 +1,17 @@
-<header class="text-gray-600 body-font bg-gradient shadow-lg">
+<header class="body-font bg-gradient shadow-lg">
   <div
     class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center"
   >
     <a
-      class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+      class="flex title-font font-medium justify-center items-center mb-4 md:mb-0"
     >
       <span
-        class="ml-3 text-3xl text-yellow-400 font-bungee shadow-md ease-in-out duration-300 hover:scale-105 hover:text-yellow-100"
+        class="ml-3 text-xl sm:text-2xl md:text-3xl text-yellow-400 font-bungee drop-shadow-md ease-in-out duration-300 hover:scale-105 hover:text-yellow-100"
         >The Star Wars Planet Wiki</span
       >
     </a>
     <nav
-      class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+      class="sm:mx-auto md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
     >
       <ul>
         <li>
@@ -19,21 +19,12 @@
             id="dropdownDefault"
             data-dropdown-toggle="dropdown"
             type="button"
-            href="/"
-            class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
-          >
-            home
-          </button>
-          <button
-            id="dropdownDefault"
-            data-dropdown-toggle="dropdown"
-            type="button"
             (mouseenter)="showAndHide()"
             (mouseleave)="showAndHide()"
             (click)="showAndHide()"
-            class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
+            class="bg-zinc-50 p-2 hover:bg-opacity-50 rounded-md bg-opacity-20 mx-4 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
           >
-            planets
+            planet list
           </button>
           <!-- dropdown menu -->
           <div
@@ -47,7 +38,7 @@
               aria-labelledby="dropdownDefault"
             >
               <li
-                class="flex flex-row ml-2 hover:translate-x-2 ease-linear duration-200"
+                class="flex flex-row hover:brightness-125 ml-2 hover:translate-x-2 ease-in-out duration-200"
               >
                 <img
                   class="h-10"
@@ -61,21 +52,13 @@
               </li>
             </ul>
           </div>
-          <button
-            id="dropdownDefault"
-            data-dropdown-toggle="dropdown"
-            type="button"
-            class="mr-5 font-chakrapetch font-extrabold text-yellow-400 uppercase hover:text-yellow-100"
-          >
-            about
-          </button>
         </li>
       </ul>
     </nav>
     <div
       (mouseenter)="changeLogo = true"
       (mouseleave)="changeLogo = false"
-      class="inline-flex items-center border-0 px-3 focus:outline-none text-base mt-4 md:mt-0"
+      class="hidden sm:inline-flex items-center border-0 px-3 focus:outline-none text-base mt-0"
     >
       <img
         *ngIf="!changeLogo"
