@@ -4,7 +4,6 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 @Component({
   selector: 'app-planets',
   templateUrl: './planets.component.html',
-  styleUrls: ['./planets.component.scss'],
 })
 export class PlanetsComponent implements OnInit {
   planetData: any = [];
@@ -15,9 +14,10 @@ export class PlanetsComponent implements OnInit {
     // GETS and SORTS data from API
     this.planetsService.getPlanets().subscribe((Data: any) => {
       // alphabetically sorts planet data by the name of the planet
-      let dat: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
-      dat = Data.results;
-      dat.sort(function (a: any, b: any) {
+      // tempData uses dummy data to check sort method
+      let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
+      tempData = Data.results;
+      tempData.sort(function (a: any, b: any) {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;
         }
@@ -26,7 +26,7 @@ export class PlanetsComponent implements OnInit {
         }
         return 0;
       });
-      return (this.planetData = dat);
+      return (this.planetData = tempData);
     });
   }
 }
