@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,21 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() planets: any = [];
   planetsDropDown: boolean;
   dropDownClass = 'hidden';
-
-  planets: any = [
-    { name: 'Tatooine' },
-    { name: 'Alderaan' },
-    { name: 'Yavin IV' },
-    { name: 'Hoth' },
-    { name: 'Dagobah' },
-    { name: 'Bespin' },
-    { name: 'Endor' },
-    { name: 'Naboo' },
-    { name: 'Coruscant' },
-    { name: 'Kamino' },
-  ];
 
   changeLogo: boolean;
   constructor() {

@@ -8,22 +8,22 @@ export class PlanetsService {
   constructor(private http: HttpClient) {
     // Example on getting planets from swapi api
     this.getPlanets().subscribe((planets: any) => {
-      console.log(planets.results);
+      // console.log(planets.results);
     });
     this.getPeople().subscribe((people: any) => {
-      console.log(people.results);
+      // console.log(people.results);
     });
   }
 
   getPlanets(): Observable<Planet[]> {
     const planetApiUrl = 'https://swapi.dev/api/planets';
-    console.log(planetApiUrl);
+    // console.log(planetApiUrl);
     return this.http.get<Planet[]>(planetApiUrl);
   }
 
   getPeople(): Observable<People[]> {
     const peopleApiUrl = 'https://swapi.dev/api/people';
-    console.log(peopleApiUrl);
+    // console.log(peopleApiUrl);
     return this.http.get<People[]>(peopleApiUrl);
   }
 }

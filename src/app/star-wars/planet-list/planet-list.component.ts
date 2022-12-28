@@ -11,7 +11,9 @@ export class PlanetListComponent implements OnInit {
   @Input() peopleData: any = [];
   title = 'planets';
 
-  constructor(private planetsService: PlanetsService) {}
+  constructor(private planetsService: PlanetsService) {
+    console.log(this.planetData);
+  }
 
   ngOnInit(): void {}
 }
