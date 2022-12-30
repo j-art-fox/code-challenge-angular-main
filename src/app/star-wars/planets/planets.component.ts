@@ -7,7 +7,7 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 })
 export class PlanetsComponent implements OnInit {
   planetData: any = [];
-  requestedPlanetData: { planetName: any } = { planetName: '' };
+  requestedPlanetData: any = {};
   activationRequest: boolean = false;
 
   constructor(private planetsService: PlanetsService) {}
@@ -38,7 +38,7 @@ export class PlanetsComponent implements OnInit {
     });
   }
 
-  onPlanetRequested(planetData: { planetName: string }) {
+  onPlanetRequested(planetData: any) {
     // this.planetRequestElements.push({ name: planetData.planetName });
     // this.requestedPlanetData = { planetName: planetData };
     this.requestedPlanetData = planetData;

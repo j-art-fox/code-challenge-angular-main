@@ -8,7 +8,7 @@ import { PlanetsService } from '../planets.service';
 export class PlanetListComponent implements OnInit {
   // inputs data from the planets.component
   @Input() planetData: any = [];
-  @Input('requestedPlanet') element!: { planetName: string };
+  @Input('requestedPlanet') element!: any;
   @Input() planetActivated: boolean = false;
   fullList: boolean = false;
   viewButton: string = 'View All Planets';

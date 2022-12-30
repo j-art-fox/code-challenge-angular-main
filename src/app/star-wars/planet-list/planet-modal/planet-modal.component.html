@@ -12,7 +12,7 @@
         class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
       >
         <h3 class="text-3xl mx-auto text-amber-100 font-chakrapetch">
-          {{ element.planetName }}
+          {{ element.name }}
         </h3>
       </div>
       <!--body-->
@@ -27,17 +27,17 @@
           <div class="max-h-48 inline-flex rounded-full mb-5 flex-shrink-0">
             <img
               class="animate-spin-slow hover:scale-110 ease-in-out hover:brightness-125 duration-200"
-              src="../../../assets/images/{{ element.planetName }}.png"
+              src="../../../assets/images/{{ element.name }}.png"
             />
           </div>
           <h1
             class="text-amber-50 mx-auto scale-105 text-lg uppercase font-chakrapetch font-bold mb-3"
           >
-            {{ element.planetName }}
+            {{ element.name }}
           </h1>
           <p class="leading-relaxed text-lg text-amber-100 font-chakrapetch">
-            The planet known as {{ element.planetName }}, is a TERRAIN planet.
-            It is typically CLIMATE.
+            The planet known as {{ element.name }}, is a TERRAIN planet. It is
+            typically CLIMATE.
           </p>
         </div>
         <!-- Planet Details -->
