@@ -7,7 +7,8 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 })
 export class PlanetsComponent implements OnInit {
   planetData: any = [];
-  requestedPlanetData = {};
+  requestedPlanetData: { planetName: any } = { planetName: '' };
+  activationRequest: boolean = false;
 
   constructor(private planetsService: PlanetsService) {}
 
@@ -36,10 +37,17 @@ export class PlanetsComponent implements OnInit {
       return (this.planetData = tempData);
     });
   }
+
   onPlanetRequested(planetData: { planetName: string }) {
     // this.planetRequestElements.push({ name: planetData.planetName });
-    this.requestedPlanetData = { planetData };
+    // this.requestedPlanetData = { planetName: planetData };
+    this.requestedPlanetData = planetData;
     console.log(planetData);
     console.log(this.requestedPlanetData);
+  }
+
+  onActivationRequest(data: boolean) {
+    this.activationRequest = data;
+    console.log(data);
   }
 }

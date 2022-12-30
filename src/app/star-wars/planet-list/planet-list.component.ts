@@ -8,11 +8,18 @@ import { PlanetsService } from '../planets.service';
 export class PlanetListComponent implements OnInit {
   // inputs data from the planets.component
   @Input() planetData: any = [];
-  @Input('requestedPlanet') element: any = {};
+  @Input('requestedPlanet') element!: { planetName: string };
+  @Input() planetActivated = false;
 
   // random example of string Interpolation
   title = 'planets';
-  planetActivated = false;
-  constructor(private planetsService: PlanetsService) {}
+
+  constructor(private planetsService: PlanetsService) {
+    console.log(this.element);
+  }
   ngOnInit(): void {}
+
+  activatePlanet() {
+    this.planetActivated = !this.planetActivated;
+  }
 }

@@ -6,6 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class JumbotronComponent implements OnInit {
   @Output() requestDetails = new EventEmitter<{ planetName: string }>();
+  @Output() activationDetails = new EventEmitter<boolean>();
 
   displayPlanetList: boolean = true;
 
@@ -27,6 +28,10 @@ export class JumbotronComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  activatePanel() {
+    this.activationDetails.emit(true);
+  }
 
   showPlanetDetails(event: any) {
     let target = event.target;

@@ -30,7 +30,7 @@
 
       <ul class="mx-auto grid grid-rows-1 justify-between w-full">
         <li class="hover:shadow-amber-100" *ngFor="let p of planets">
-          <a (click)="showPlanetDetails($event)"
+          <a (click)="showPlanetDetails($event)" (click)="activatePanel()"
             ><img
               id="{{ p.name }}"
               class="h-6 sm:h-10 md:h-14 lg:h-20 xl:h-24 shadow-lg animate-spin-slow ease-in-out duration-200"
