@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-jumbotron',
   templateUrl: './jumbotron.component.html',
 })
 export class JumbotronComponent implements OnInit {
+  @Output() requestDetails = new EventEmitter<{ planetName: string }>();
+
+  displayPlanetList: boolean = true;
+
+  newPlanetRequest = '';
   // Array of planet names for pulling up the images of the planets from the assets folder.
   planets: any = [
     { name: 'Alderaan' },
@@ -22,4 +27,15 @@ export class JumbotronComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showPlanetDetails(event: any) {
+    let target = event.target;
+    this.newPlanetRequest = target.id;
+    console.log(this.newPlanetRequest);
+
+    // start here
+    this.requestDetails.emit({
+      planetName: this.newPlanetRequest,
+    });
+  }
 }

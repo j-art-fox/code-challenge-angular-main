@@ -1,8 +1,9 @@
 <div
-  class="p-12 h-96 text-center relative overflow-hidden bg-no-repeat bg-cover rounded-xl shadow-2xl"
+  class="p-12 w-4/5 mx-auto my-10 h-96 text-center relative overflow-hidden bg-no-repeat bg-cover rounded-xl shadow-2xl"
 >
   <div
     class="absolute jumbotron-bg top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+    *ngIf="displayPlanetList"
   >
     <div
       id="home"
@@ -26,12 +27,16 @@
           Legends.
         </h4>
       </div>
+
       <ul class="mx-auto grid grid-rows-1 justify-between w-full">
         <li class="hover:shadow-amber-100" *ngFor="let p of planets">
-          <img
-            class="h-6 sm:h-10 md:h-14 lg:h-20 xl:h-24 shadow-lg animate-spin-slow ease-in-out duration-200"
-            src="../../../assets/images/{{ p.name }}.png"
-          />
+          <a (click)="showPlanetDetails($event)"
+            ><img
+              id="{{ p.name }}"
+              class="h-6 sm:h-10 md:h-14 lg:h-20 xl:h-24 shadow-lg animate-spin-slow ease-in-out duration-200"
+              src="../../../assets/images/{{ p.name }}.png"
+            />
+          </a>
         </li>
       </ul>
     </div>

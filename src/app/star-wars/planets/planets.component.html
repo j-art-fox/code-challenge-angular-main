@@ -1,5 +1,9 @@
 <div class="h-screen">
   <app-header [planets]="planetData"></app-header>
-  <app-planet-list [planetData]="planetData"></app-planet-list>
+  <app-jumbotron (requestDetails)="onPlanetRequested($event)"></app-jumbotron>
+  <app-planet-list
+    [requestedPlanet]="requestedPlanetData"
+    [planetData]="planetData"
+  ></app-planet-list>
   <app-footer></app-footer>
 </div>
