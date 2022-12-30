@@ -9,10 +9,10 @@ export class PlanetListComponent implements OnInit {
   // inputs data from the planets.component
   @Input() planetData: any = [];
   @Input('requestedPlanet') element!: { planetName: string };
-  @Input() planetActivated = false;
+  @Input() planetActivated: boolean = false;
 
   // random example of string Interpolation
-  title = 'planets';
+  title = 'planet list';
 
   constructor(private planetsService: PlanetsService) {
     console.log(this.element);
@@ -20,6 +20,6 @@ export class PlanetListComponent implements OnInit {
   ngOnInit(): void {}
 
   activatePlanet() {
-    this.planetActivated = !this.planetActivated;
+    this.planetActivated = true;
   }
 }

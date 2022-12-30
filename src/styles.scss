@@ -1,58 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import '~primeng/resources/themes/lara-light-blue/theme.css';
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import "~primeng/resources/themes/lara-light-blue/theme.css";
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap");
 
 @font-face {
-    font-family: 'bungee', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Bungee&display=swap')
-};
+  font-family: "bungee", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+}
 
 @font-face {
-    font-family: 'Chakra Petch', sans-serif;
-    src:url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap')
-};
+  font-family: "Chakra Petch", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
+}
 
 @font-face {
-    font-family: 'Chakra Petch', sans-serif;
-    src:url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap')
-};
+  font-family: "Chakra Petch", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap");
+}
 
 .bg-gradient {
-    background: linear-gradient(90deg, rgba(44, 4, 69, 0.927) 0%, rgba(98, 1, 30, 0.96) 50%), url(./assets/images/hexegons1.jpg);
-    background-position: center;
-    background-size:auto;
-    background-repeat: repeat;
-  }
+  background: linear-gradient(
+      90deg,
+      rgba(44, 4, 69, 0.927) 0%,
+      rgba(98, 1, 30, 0.96) 50%
+    ),
+    url(./assets/images/hexegons1.jpg);
+  background-position: center;
+  background-size: auto;
+  background-repeat: repeat;
+}
 
 .planet-bg {
-    background: linear-gradient(90deg, rgba(42, 39, 39, 0.975) 10%, rgba(82, 76, 76, 0.893) 60%), url(./assets/images/stainless-steel.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 490px;
-  }
-  .hover-planet-bg {
-    background: linear-gradient(90deg, rgba(76, 70, 70, 0.975) 10%, rgba(133, 124, 124, 0.893) 60%), url(./assets/images/stainless-steel.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 490px;
-  }
+  background: linear-gradient(
+      90deg,
+      rgba(42, 39, 39, 0.975) 10%,
+      rgba(82, 76, 76, 0.893) 60%
+    ),
+    url(./assets/images/stainless-steel.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 490px;
+}
 
-  .jumbotron-bg{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.905) 90%), url(./assets/images/space.jpeg);
-    
-  }
+.metal-bg {
+  background: linear-gradient(
+      90deg,
+      rgba(42, 39, 39, 0.975) 10%,
+      rgba(82, 76, 76, 0.893) 60%
+    ),
+    url(./assets/images/stainless-steel.jpg);
+  background-position: center;
+  background-size: cover;
+}
 
-  .drop-down-bg {
-    background: linear-gradient(0deg, rgba(98, 1, 30, .95) 0%, rgba(74, 1, 98, 0.98) 100%), url(./assets/images/scifitexture1blurred.png);
-  }
+.hover-planet-bg {
+  background: linear-gradient(
+      90deg,
+      rgba(76, 70, 70, 0.975) 10%,
+      rgba(133, 124, 124, 0.893) 60%
+    ),
+    url(./assets/images/stainless-steel.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 490px;
+}
+
+.jumbotron-bg {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.905) 90%
+    ),
+    url(./assets/images/space.jpeg);
+}
+
+.drop-down-bg {
+  background: linear-gradient(
+      0deg,
+      rgba(98, 1, 30, 0.95) 0%,
+      rgba(74, 1, 98, 0.98) 100%
+    ),
+    url(./assets/images/scifitexture1blurred.png);
+}
 
 body {
-background: linear-gradient(90deg, rgba(240, 240, 240, 0.98) 0%, rgba(220, 220, 220, 0.9) 60%), url(./assets/images/scifitexture1blurred.png);
-
+  background: linear-gradient(
+      90deg,
+      rgba(240, 240, 240, 0.98) 0%,
+      rgba(220, 220, 220, 0.9) 60%
+    ),
+    url(./assets/images/scifitexture1blurred.png);
 }
