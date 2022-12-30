@@ -22,11 +22,11 @@
       >
         <!-- Planet Image, Name, and breif Description. -->
         <div
-          class="py-4 md:w-1/3 flex flex-col my-auto border-zinc-500 md:border-r-2"
+          class="py-4 md:w-2/5 flex flex-col my-auto border-zinc-500 md:border-r-2"
         >
           <div class="max-h-48 inline-flex rounded-full mb-5 flex-shrink-0">
             <img
-              class="animate-spin-slow hover:scale-110 ease-in-out hover:brightness-125 duration-200"
+              class="animate-spin-slow mx-auto hover:scale-110 ease-in-out hover:brightness-125 duration-200"
               src="../../../assets/images/{{ element.name }}.png"
             />
           </div>
@@ -36,21 +36,76 @@
             {{ element.name }}
           </h1>
           <p class="leading-relaxed text-lg text-amber-100 font-chakrapetch">
-            The planet known as {{ element.name }}, is a TERRAIN planet. It is
-            typically CLIMATE.
+            The planet known as {{ element.name }}, has a terrain that is made
+            up of {{ element.terrain }}. It is typically {{ element.climate }}.
           </p>
         </div>
         <!-- Planet Details -->
-        <div class="p-4 md:w-2/3 flex flex-col text-left my-auto">
-          <!-- <app-planet-detail [planetDetailsData]="i"></app-planet-detail> -->
+        <div class="pl-4 md:w-3/5 flex flex-col text-left my-auto">
+          <ul class="text-xl">
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-50 uppercase text-yellow-100"
+                >climate:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50">{{
+                element.climate
+              }}</span>
+            </li>
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-100 uppercase text-yellow-200"
+                >terrain:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50">{{
+                element.terrain
+              }}</span>
+            </li>
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-200 uppercase text-yellow-300"
+                >Orbital Period:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50"
+                >{{ element.orbital_period }} EH</span
+              >
+            </li>
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-300 uppercase text-yellow-400"
+                >diameter:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50"
+                >{{ element.diameter }} units</span
+              >
+            </li>
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-400 uppercase text-yellow-500"
+                >rotation period:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50"
+                >{{ element.rotation_period }} EH</span
+              >
+            </li>
+            <li class="my-2">
+              <span
+                class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-500 uppercase text-yellow-600"
+                >population:
+              </span>
+              <span class="text-teal-100 capitalize hover:text-teal-50">{{
+                element.population
+              }}</span>
+            </li>
+          </ul>
         </div>
       </div>
       <!--footer-->
       <div
-        class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+        class="flex items-center justify-end p-2 border-t border-solid border-slate-200 rounded-b"
       >
         <button
-          class="bg-red-700 text-white active:bg-emerald-600 font-bold uppercase text-sm px-3 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          class="text-red-500 active:text-red-300 font-bold uppercase text-sm px-3 py-3 hover:drop-shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           (click)="closeModal()"
         >

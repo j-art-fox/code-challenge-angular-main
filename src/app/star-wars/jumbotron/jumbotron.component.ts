@@ -67,7 +67,7 @@ export class JumbotronComponent implements OnInit {
     let target = event.target;
     let selectedPlanet: {} = {};
     for (const planet of this.planets) {
-      if (planet.name === target.id) {
+      if (planet.name === target.id || target.alt) {
         console.log(planet);
         selectedPlanet = planet;
       }
