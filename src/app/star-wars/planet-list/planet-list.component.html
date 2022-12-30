@@ -8,17 +8,22 @@
 
     <!-- FULL PLANET LIST -->
     <div class="w-full">
-      <div class="px-4 mx-auto rounded-xl metal-bg max-w-fit">
-        <h1 class="text-teal-200 text-4xl py-2 font-bungee">{{ title }}</h1>
-      </div>
+      <a (click)="showFullList()"
+        ><div class="px-4 mx-auto rounded-lg metal-bg max-w-fit">
+          <h1 class="text-teal-200 text-3xl py-2 font-bungee">
+            {{ viewButton }}
+          </h1>
+        </div>
+      </a>
     </div>
     <div
       id="card"
-      class="lg:w-1/2 my-6 md:my-0 body-font"
-      *ngFor="let i of planetData"
+      class="flex flex-wrap my-6 md:my-0 body-font"
+      *ngIf="fullList"
     >
       <div
-        class="flex flex-wrap planet-bg md:scale-75 hover:backdrop-brightness-150 shadow-2xl rounded-xl m-2 px-2 sm:-m-4 md:space-y-0 space-y-6"
+        class="lg:w-1/2 flex flex-wrap planet-bg md:scale-75 hover:backdrop-brightness-150 shadow-2xl rounded-xl m-2 px-2 sm:-m-4 md:space-y-0 space-y-6"
+        *ngFor="let i of planetData"
       >
         <!-- Planet Image, Name, and breif Description. -->
         <div

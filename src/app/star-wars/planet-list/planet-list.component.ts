@@ -10,9 +10,10 @@ export class PlanetListComponent implements OnInit {
   @Input() planetData: any = [];
   @Input('requestedPlanet') element!: { planetName: string };
   @Input() planetActivated: boolean = false;
+  fullList: boolean = false;
+  viewButton: string = 'View All Planets';
 
   // random example of string Interpolation
-  title = 'planet list';
 
   constructor(private planetsService: PlanetsService) {
     console.log(this.element);
@@ -21,5 +22,8 @@ export class PlanetListComponent implements OnInit {
 
   activatePlanet() {
     this.planetActivated = true;
+  }
+  showFullList() {
+    this.fullList = !this.fullList;
   }
 }
