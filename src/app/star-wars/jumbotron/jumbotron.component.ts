@@ -25,17 +25,19 @@ export class JumbotronComponent implements OnInit {
   @Output() activationDetails = new EventEmitter<boolean>();
 
   displayPlanetList: boolean = true;
-  climate: string = '';
 
   newPlanetRequest: any = {};
   // Array of planet names for pulling up the images of the planets from the assets folder.
   planets: Planet[] = [];
+
+  showSpinner: boolean = true;
 
   constructor(private planetsService: PlanetsService) {}
 
   ngOnInit(): void {
     // GETS and SORTS data from API
     this.planetsService.getPlanets().subscribe((Data: any) => {
+      this.showSpinner = false;
       // alphabetically sorts planet data by the name of the planet
       // tempData uses dummy data to check sort method
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
@@ -55,7 +57,8 @@ export class JumbotronComponent implements OnInit {
         return 0;
       });
 
-      return (this.planets = tempData);
+      this.planets = tempData;
+      return (this.showSpinner = false);
     });
   }
 
