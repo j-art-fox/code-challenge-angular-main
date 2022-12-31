@@ -66,21 +66,19 @@ export class JumbotronComponent implements OnInit {
   activatePanel() {
     this.activationDetails.emit(true);
   }
+  displayDropdown() {
+    this.dropDownDisplayed = !this.dropDownDisplayed;
+  }
 
   showPlanetDetails(event: any) {
     let target = event.target;
     let selectedPlanet: {} = {};
     for (const planet of this.planets) {
       if (planet.name === target.id || target.alt) {
-        console.log(planet);
         selectedPlanet = planet;
       }
     }
-    console.log(selectedPlanet);
-
     this.newPlanetRequest = selectedPlanet;
-    console.log(this.newPlanetRequest);
-
     // start here
     this.requestDetails.emit({
       name: this.newPlanetRequest.name,
@@ -98,8 +96,5 @@ export class JumbotronComponent implements OnInit {
       edited: this.newPlanetRequest.edited,
       url: this.newPlanetRequest.url,
     });
-  }
-  displayDropdown() {
-    this.dropDownDisplayed = !this.dropDownDisplayed;
   }
 }
