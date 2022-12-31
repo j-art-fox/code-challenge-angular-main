@@ -31,6 +31,7 @@ export class JumbotronComponent implements OnInit {
   planets: Planet[] = [];
 
   showSpinner: boolean = true;
+  dropDownDisplayed: boolean = false;
 
   constructor(private planetsService: PlanetsService) {}
 
@@ -97,5 +98,8 @@ export class JumbotronComponent implements OnInit {
       edited: this.newPlanetRequest.edited,
       url: this.newPlanetRequest.url,
     });
+  }
+  displayDropdown() {
+    this.dropDownDisplayed = !this.dropDownDisplayed;
   }
 }
