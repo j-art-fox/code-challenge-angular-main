@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { PlanetsService } from '../../planets.service';
 
 @Component({
@@ -6,36 +6,47 @@ import { PlanetsService } from '../../planets.service';
   templateUrl: './planet-modal.component.html',
   styleUrls: ['./planet-modal.component.scss'],
 })
-export class PlanetModalComponent implements OnInit {
+export class PlanetModalComponent implements OnInit, OnChanges {
   @Input() planetActivated: boolean = false;
-  @Input('requestedPlanet') element!: any;
+  @Input('requestedPlanet') requestedPlanet!: any;
   modalPlanetData: any = {};
+  temporaryData: any = [{}];
 
   constructor(private planetsService: PlanetsService) {}
 
   ngOnInit(): void {
     this.planetsService.getPlanets().subscribe((Data: any) => {
-      let tempData: any = [{}];
-      tempData = Data.results;
-      console.log(tempData);
+      this.temporaryData = Data.results;
+      console.log(this.temporaryData);
 
-      for (const planet of tempData) {
-        if (planet.name === this.element.planetName) return console.log(planet);
+      for (const planet of this.temporaryData) {
+        if (planet.name === this.requestedPlanet.planetName)
+          return console.log(planet);
       }
 
-      for (const iterator of tempData) {
+      for (const iterator of this.temporaryData) {
         iterator.active = false;
       }
-      return (this.modalPlanetData = tempData);
+      return (this.modalPlanetData = this.temporaryData);
     });
   }
 
-  closeModal() {
-    this.planetActivated = false;
-    window.location.reload();
+  //the code below has no obvious bugs, but isn't performing the intended function of rendering a new planet details modal.
+  ngOnChanges(): void {
+    for (const planet of this.temporaryData) {
+      if (planet.name === this.requestedPlanet.planetName)
+        return console.log(planet);
+    }
+
+    for (const iterator of this.temporaryData) {
+      iterator.active = false;
+    }
+    return (this.modalPlanetData = this.temporaryData);
   }
 
-  displayDetails() {
-    if (this.element) console.log(this.element);
+  closeModal() {
+    this.planetActivated = !this.planetActivated;
+    // There has to be a better way to do this　⇩
+    // window.location.reload();
   }
 }

@@ -79,7 +79,6 @@ export class JumbotronComponent implements OnInit {
       }
     }
     this.newPlanetRequest = selectedPlanet;
-    // start here
     this.requestDetails.emit({
       name: this.newPlanetRequest.name,
       rotation_period: this.newPlanetRequest.rotation_period,
