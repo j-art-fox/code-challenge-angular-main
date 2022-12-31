@@ -26,6 +26,11 @@ export class PlanetListComponent implements OnInit {
     this.planetActivated = true;
   }
   showFullList() {
+    if (this.viewButton === 'View All Planets') {
+      this.viewButton = 'Hide All Planets';
+    } else {
+      this.viewButton = 'View All Planets';
+    }
     this.fullList = !this.fullList;
   }
   displayDropdown() {

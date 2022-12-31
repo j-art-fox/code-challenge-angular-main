@@ -1,4 +1,4 @@
-<div class="hidden md:flex justify-center py-8">
+<div class="flex justify-center py-8">
   <div class="w-4/5 flex flex-wrap justify-between">
     <!-- MODAL -->
     <app-planet-modal
@@ -7,7 +7,7 @@
     ></app-planet-modal>
     <!-- ABOUT -->
     <div
-      class="flex flex-col justify-center text-zinc-700 shadow-lg bg-gray-100 rounded-xl my-4"
+      class="hidden md:flex flex-col justify-center text-zinc-700 shadow-lg bg-gray-100 rounded-xl mb-4"
     >
       <h1
         class="text-xs sm:text-sm xl:px-24 lg:px-20 md:px-14 font-semibold font-chakrapetch uppercase md:text-md lg:text-lg xl:text-xl mt-4"
@@ -15,7 +15,7 @@
         About
       </h1>
       <p
-        class="text-xs sm:text-sm xl:px-24 lg:px-20 md:px-14 font-medium font-chakrapetch md:text-md lg:text-lg xl:text-xl mb-4 mt-2"
+        class="text-xs sm:text-sm xl:px-24 lg:px-20 md:px-14 font-medium font-chakrapetch md:text-md lg:text-lg xl:text-xl mb-4 m-2"
       >
         The Star Wars Planet Wiki features the 10 main planets from the
         fictional universe of the Star Wars franchise. While only the feature
@@ -25,11 +25,14 @@
         Star Wars expanded universe, now rebranded Star Wars Legends.
       </p>
     </div>
+
     <!-- FULL PLANET LIST -->
-    <div class="hidden md:flex justify-center w-full">
-      <a (click)="showFullList()"
+    <div class="hidden md:flex justify-center w-full mt-8">
+      <a
+        (click)="showFullList()"
+        class="hover:cursor-pointer text-teal-200 hover:text-yellow-200 hover:scale-105 ease-linear duration-150"
         ><div class="px-4 mx-auto rounded-lg metal-bg max-w-fit">
-          <h1 class="text-teal-200 text-3xl py-2 font-bungee">
+          <h1 class="text-3xl py-2 font-bungee">
             {{ viewButton }}
           </h1>
         </div>
@@ -37,7 +40,7 @@
     </div>
     <div
       id="card"
-      class="hidden md:flex flex-wrap my-6 md:my-0 body-font"
+      class="hidden md:flex flex-wrap justify-center my-6 md:my-0"
       *ngIf="fullList"
     >
       <div
