@@ -1,11 +1,11 @@
-import { Component, DoCheck, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PlanetsService } from '../planets.service';
 
 @Component({
   selector: 'app-planet-list',
   templateUrl: './planet-list.component.html',
 })
-export class PlanetListComponent implements DoCheck {
+export class PlanetListComponent implements OnInit {
   // inputs data from the planets.component
   @Input() planetData: any = [];
   @Input('requestedPlanet') element!: any;
@@ -20,7 +20,7 @@ export class PlanetListComponent implements DoCheck {
   constructor(private planetsService: PlanetsService) {
     console.log(this.element);
   }
-  ngDoCheck(): void {}
+  ngOnInit(): void {}
 
   activatePlanet() {
     this.planetActivated = true;

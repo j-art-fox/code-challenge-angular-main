@@ -24,12 +24,8 @@ export class JumbotronComponent implements OnInit {
   }>();
   @Output() activationDetails = new EventEmitter<boolean>();
 
-  displayPlanetList: boolean = true;
-
   newPlanetRequest: any = {};
-  // Array of planet names for pulling up the images of the planets from the assets folder.
   planets: Planet[] = [];
-
   showSpinner: boolean = true;
   dropDownDisplayed: boolean = true;
 
@@ -39,14 +35,8 @@ export class JumbotronComponent implements OnInit {
     // GETS and SORTS data from API
     this.planetsService.getPlanets().subscribe((Data: any) => {
       this.showSpinner = false;
-      // alphabetically sorts planet data by the name of the planet
-      // tempData uses dummy data to check sort method
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
       tempData = Data.results;
-
-      for (const iterator of tempData) {
-        iterator.active = false;
-      }
 
       tempData.sort(function (a: any, b: any) {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
@@ -66,15 +56,11 @@ export class JumbotronComponent implements OnInit {
   activatePanel() {
     this.activationDetails.emit(true);
   }
-  displayDropdown() {
-    this.dropDownDisplayed = !this.dropDownDisplayed;
-  }
-
   showPlanetDetails(event: any) {
     let target = event.target;
     let selectedPlanet: {} = {};
     for (const planet of this.planets) {
-      if (planet.name === target.id || target.alt) {
+      if (planet.name === target.id) {
         selectedPlanet = planet;
       }
     }
@@ -95,5 +81,8 @@ export class JumbotronComponent implements OnInit {
       edited: this.newPlanetRequest.edited,
       url: this.newPlanetRequest.url,
     });
+  }
+  displayDropdown() {
+    this.dropDownDisplayed = !this.dropDownDisplayed;
   }
 }

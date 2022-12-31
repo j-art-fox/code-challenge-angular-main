@@ -20,10 +20,6 @@ export class PlanetsComponent implements OnInit {
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
       tempData = Data.results;
 
-      for (const iterator of tempData) {
-        iterator.active = false;
-      }
-
       tempData.sort(function (a: any, b: any) {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;

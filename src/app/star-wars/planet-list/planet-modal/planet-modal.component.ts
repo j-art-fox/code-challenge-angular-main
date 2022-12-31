@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { PlanetsService } from '../../planets.service';
 
 @Component({
@@ -32,15 +38,14 @@ export class PlanetModalComponent implements OnInit, OnChanges {
   }
 
   //the code below has no obvious bugs, but isn't performing the intended function of rendering a new planet details modal.
-  ngOnChanges(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    let data: {} = changes;
+    console.log(data);
     for (const planet of this.temporaryData) {
       if (planet.name === this.requestedPlanet.planetName)
         return console.log(planet);
     }
 
-    for (const iterator of this.temporaryData) {
-      iterator.active = false;
-    }
     return (this.modalPlanetData = this.temporaryData);
   }
 
