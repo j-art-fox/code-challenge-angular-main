@@ -13,6 +13,8 @@ export class PlanetListComponent implements OnInit {
   fullList: boolean = false;
   viewButton: string = 'View All Planets';
 
+  dropDownDisplayed: boolean = false;
+
   // random example of string Interpolation
 
   constructor(private planetsService: PlanetsService) {
@@ -25,5 +27,8 @@ export class PlanetListComponent implements OnInit {
   }
   showFullList() {
     this.fullList = !this.fullList;
+  }
+  displayDropdown() {
+    this.dropDownDisplayed = !this.dropDownDisplayed;
   }
 }
