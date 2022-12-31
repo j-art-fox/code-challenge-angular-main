@@ -39,8 +39,6 @@ export class PlanetsComponent implements OnInit {
   }
 
   onPlanetRequested(planetData: any) {
-    // this.planetRequestElements.push({ name: planetData.planetName });
-    // this.requestedPlanetData = { planetName: planetData };
     this.requestedPlanetData = planetData;
     console.log(planetData);
     console.log(this.requestedPlanetData);

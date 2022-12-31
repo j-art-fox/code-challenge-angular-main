@@ -31,7 +31,7 @@ export class JumbotronComponent implements OnInit {
   planets: Planet[] = [];
 
   showSpinner: boolean = true;
-  dropDownDisplayed: boolean = false;
+  dropDownDisplayed: boolean = true;
 
   constructor(private planetsService: PlanetsService) {}
 

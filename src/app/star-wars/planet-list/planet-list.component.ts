@@ -13,7 +13,7 @@ export class PlanetListComponent implements OnInit {
   fullList: boolean = false;
   viewButton: string = 'View All Planets';
 
-  dropDownDisplayed: boolean = false;
+  dropDownDisplayed: boolean = true;
 
   // random example of string Interpolation
 
