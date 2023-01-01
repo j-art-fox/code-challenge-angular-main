@@ -1,4 +1,4 @@
-#The Star Wars Planet Wiki
+# The Star Wars Planet Wiki
 
 ## Introduction
 
