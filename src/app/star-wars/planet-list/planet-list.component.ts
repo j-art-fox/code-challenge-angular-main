@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-planet-list',
@@ -8,6 +8,8 @@ export class PlanetListComponent implements OnInit {
   @Input() planetData: any = [];
   @Input('requestedPlanet') element!: any;
   @Input() planetActivated: boolean = false;
+  @Output() deactivationDetails = new EventEmitter<boolean>();
+
   fullList: boolean = false;
   viewButton: string = 'View All Planets';
 
@@ -16,9 +18,6 @@ export class PlanetListComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 
-  activatePlanet() {
-    this.planetActivated = true;
-  }
   showFullList() {
     if (this.viewButton === 'View All Planets') {
       this.viewButton = 'Hide All Planets';
@@ -29,5 +28,9 @@ export class PlanetListComponent implements OnInit {
   }
   displayDropdown() {
     this.dropDownDisplayed = !this.dropDownDisplayed;
+  }
+
+  emitDeactivation() {
+    this.deactivationDetails.emit(false);
   }
 }

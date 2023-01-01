@@ -55,6 +55,7 @@ export class JumbotronComponent implements OnInit {
 
   activatePanel() {
     this.activationDetails.emit(true);
+    console.log('here');
   }
   showPlanetDetails(event: any) {
     let target = event.target;

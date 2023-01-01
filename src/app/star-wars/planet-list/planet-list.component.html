@@ -1,6 +1,7 @@
 <app-planet-modal
   [planetActivated]="planetActivated"
   [requestedPlanet]="element"
+  (deactivationDetails)="emitDeactivation()"
 ></app-planet-modal>
 
 <div class="hidden md:flex justify-center py-8">

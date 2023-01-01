@@ -4,6 +4,8 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 import { PlanetsService } from '../../planets.service';
 
@@ -15,6 +17,7 @@ import { PlanetsService } from '../../planets.service';
 export class PlanetModalComponent implements OnInit, OnChanges {
   @Input() planetActivated: boolean = false;
   @Input('requestedPlanet') requestedPlanet!: any;
+  @Output() deactivationDetails = new EventEmitter<boolean>();
   modalPlanetData: any = {};
   temporaryData: any = [{}];
 
@@ -30,9 +33,6 @@ export class PlanetModalComponent implements OnInit, OnChanges {
           return console.log(planet);
       }
 
-      for (const iterator of this.temporaryData) {
-        iterator.active = false;
-      }
       return (this.modalPlanetData = this.temporaryData);
     });
   }
@@ -41,6 +41,7 @@ export class PlanetModalComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     let data: {} = changes;
     console.log(data);
+    // this.planetActivated = true;
     for (const planet of this.temporaryData) {
       if (planet.name === this.requestedPlanet.planetName)
         return console.log(planet);
@@ -50,8 +51,6 @@ export class PlanetModalComponent implements OnInit, OnChanges {
   }
 
   closeModal() {
-    this.planetActivated = !this.planetActivated;
-    // There has to be a better way to do this　⇩
-    // window.location.reload();
+    this.deactivationDetails.emit(false);
   }
 }
