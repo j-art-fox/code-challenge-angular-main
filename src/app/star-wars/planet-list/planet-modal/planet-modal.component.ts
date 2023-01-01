@@ -37,7 +37,6 @@ export class PlanetModalComponent implements OnInit, OnChanges {
     });
   }
 
-  //the code below has no obvious bugs, but isn't performing the intended function of rendering a new planet details modal.
   ngOnChanges(changes: SimpleChanges): void {
     let data: {} = changes;
     console.log(data);
