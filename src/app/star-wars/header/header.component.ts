@@ -9,10 +9,8 @@ export class HeaderComponent implements OnInit {
   @Input() planets: any = [];
   planetsDropDown: boolean;
   dropDownClass = 'hidden';
-  changeLogo: boolean;
 
   constructor(private planetsService: PlanetsService) {
-    this.changeLogo = false;
     this.planetsDropDown = false;
   }
   showAndHide() {
