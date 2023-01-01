@@ -1,13 +1,11 @@
-<div class="h-screen">
-  <app-header [planets]="planetData"></app-header>
-  <app-jumbotron
-    (requestDetails)="onPlanetRequested($event)"
-    (activationDetails)="onActivationRequest(true)"
-  ></app-jumbotron>
-  <app-planet-list
-    [requestedPlanet]="requestedPlanetData"
-    [planetData]="planetData"
-    [planetActivated]="activationRequest"
-  ></app-planet-list>
-  <app-footer></app-footer>
-</div>
+<app-header [planets]="planetData"></app-header>
+<app-jumbotron
+  (requestDetails)="onPlanetRequested($event)"
+  (activationDetails)="onActivationRequest(true)"
+></app-jumbotron>
+<app-planet-list
+  [requestedPlanet]="requestedPlanetData"
+  [planetData]="planetData"
+  [planetActivated]="activationRequest"
+></app-planet-list>
+<app-footer></app-footer>

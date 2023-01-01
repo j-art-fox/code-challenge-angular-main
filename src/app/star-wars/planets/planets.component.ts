@@ -15,8 +15,6 @@ export class PlanetsComponent implements OnInit {
   ngOnInit(): void {
     // GETS and SORTS data from API
     this.planetsService.getPlanets().subscribe((Data: any) => {
-      // alphabetically sorts planet data by the name of the planet
-      // tempData uses dummy data to check sort method
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
       tempData = Data.results;
 
@@ -36,12 +34,9 @@ export class PlanetsComponent implements OnInit {
 
   onPlanetRequested(planetData: any) {
     this.requestedPlanetData = planetData;
-    console.log(planetData);
-    console.log(this.requestedPlanetData);
   }
 
   onActivationRequest(data: boolean) {
     this.activationRequest = data;
-    console.log(data);
   }
 }
