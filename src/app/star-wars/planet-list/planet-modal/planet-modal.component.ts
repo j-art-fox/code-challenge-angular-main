@@ -12,7 +12,6 @@ import { PlanetsService } from '../../planets.service';
 @Component({
   selector: 'app-planet-modal',
   templateUrl: './planet-modal.component.html',
-  styleUrls: ['./planet-modal.component.scss'],
 })
 export class PlanetModalComponent implements OnInit, OnChanges {
   @Input() planetActivated: boolean = false;
@@ -27,12 +26,10 @@ export class PlanetModalComponent implements OnInit, OnChanges {
     this.planetsService.getPlanets().subscribe((Data: any) => {
       this.temporaryData = Data.results;
       console.log(this.temporaryData);
-
       for (const planet of this.temporaryData) {
         if (planet.name === this.requestedPlanet.planetName)
           return console.log(planet);
       }
-
       return (this.modalPlanetData = this.temporaryData);
     });
   }
@@ -40,7 +37,6 @@ export class PlanetModalComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     let data: {} = changes;
     console.log(data);
-    // this.planetActivated = true;
     for (const planet of this.temporaryData) {
       if (planet.name === this.requestedPlanet.planetName)
         return console.log(planet);

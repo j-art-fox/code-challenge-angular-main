@@ -4,11 +4,11 @@
   (click)="closeModal()"
 >
   <div class="relative w-auto my-6 mx-auto max-w-6xl">
-    <!--Modal Content-->
+    <!--MODAL CONTENT-->
     <div
       class="border-0 rounded-lg shadow-lg relative flex flex-col w-full planet-bg outline-none focus:outline-none"
     >
-      <!--header-->
+      <!--MODAL HEADER-->
       <div
         class="flex items-start justify-between p-5 border-b border-solid border-zinc-500 rounded-t"
       >
@@ -16,12 +16,12 @@
           {{ requestedPlanet.name }}
         </h3>
       </div>
-      <!--body-->
+      <!--MODAL BODY-->
       <div
         class="flex flex-wrap md:scale-90 sm:-m-4 md:space-y-0 space-y-6 p-2"
         *ngIf="planetActivated"
       >
-        <!-- Planet Image, Name, and breif Description. -->
+        <!--MODAL BODY: LEFT-SIDE=Image, Name, and Breif Description. -->
         <div
           class="py-4 md:w-2/5 flex flex-col my-auto border-zinc-500 md:border-r-2"
         >
@@ -37,16 +37,16 @@
             {{ requestedPlanet.name }}
           </h1>
           <p
-            class="leading-relaxed text-lg text-amber-100 p-2 font-chakrapetch"
+            class="leading-relaxed indent-5 text-lg text-amber-100 p-2 font-chakrapetch"
           >
             The planet known as {{ requestedPlanet.name }}, has a terrain that
             is made up of {{ requestedPlanet.terrain }}. It is typically
             {{ requestedPlanet.climate }}.
           </p>
         </div>
-        <!-- RIGHT-SIDE PLANET DETAILS -->
+        <!--MODAL BODY: RIGHT-SIDE=PLANET DETAILS -->
         <div class="pl-4 md:w-3/5 flex flex-col text-left my-auto">
-          <ul class="text-xl">
+          <ul class="text-lg">
             <li class="my-2">
               <span
                 class="font-extrabold font-chakrapetch ease-in-out hover:text-yellow-50 uppercase text-yellow-100"
@@ -104,7 +104,7 @@
           </ul>
         </div>
       </div>
-      <!--footer-->
+      <!--MODAL FOOTER-->
       <div
         class="flex items-center justify-end p-2 border-t border-solid border-zinc-500 rounded-b"
       >

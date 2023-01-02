@@ -6,7 +6,7 @@ import { Planet } from '../star-wars.interface';
   templateUrl: './jumbotron.component.html',
 })
 export class JumbotronComponent implements OnInit {
-  @Output() requestDetails = new EventEmitter<{
+  @Output() planetRequestDetails = new EventEmitter<{
     name: string;
     rotation_period: string;
     orbital_period: string;
@@ -23,9 +23,10 @@ export class JumbotronComponent implements OnInit {
     url: string;
   }>();
   @Output() activationDetails = new EventEmitter<boolean>();
+  // From the API call
+  planets: Planet[] = [];
 
   newPlanetRequest: any = {};
-  planets: Planet[] = [];
   showSpinner: boolean = true;
   dropDownDisplayed: boolean = true;
 
@@ -66,7 +67,7 @@ export class JumbotronComponent implements OnInit {
       }
     }
     this.newPlanetRequest = selectedPlanet;
-    this.requestDetails.emit({
+    this.planetRequestDetails.emit({
       name: this.newPlanetRequest.name,
       rotation_period: this.newPlanetRequest.rotation_period,
       orbital_period: this.newPlanetRequest.orbital_period,

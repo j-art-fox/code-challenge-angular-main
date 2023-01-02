@@ -17,9 +17,10 @@
         >
           Select a planet
         </p>
+        <!-- SPINNER FOR LOADING -->
         <app-spinner *ngIf="showSpinner"></app-spinner>
       </div>
-
+      <!-- INTERACTIVE LIST OF PLANETS -->
       <ul
         class="mx-auto flex flex-row flex-wrap justify-around w-full text-yellow-300"
       >
@@ -50,7 +51,7 @@
     </div>
   </div>
 </div>
-<!-- dropdown menu for mobile -->
+<!-- DROPDOWN MENU FOR MOBILE -->
 <div
   class="my-10 flex flex-col bg-gradient-to-b from-zinc-100 to-zinc-200 shadow-lg bg-opacity-50 md:hidden rounded-xl hover:bg-yellow-100"
 >
@@ -64,6 +65,7 @@
     *ngIf="dropDownDisplayed"
     class="bg-gradient-to-b from-zinc-100 to-zinc-300"
   >
+    <!-- LIST OF PLANETS (MOBILE) -->
     <ul class="flex justify-center shadow-md" *ngFor="let planet of planets">
       <button
         id="{{ planet.name }}"
