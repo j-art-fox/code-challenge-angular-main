@@ -14,7 +14,9 @@ import { PlanetsService } from '../../planets.service';
   templateUrl: './planet-modal.component.html',
 })
 export class PlanetModalComponent implements OnInit, OnChanges {
+  // imports command to activate planet
   @Input() planetActivated: boolean = false;
+
   @Input('requestedPlanet') requestedPlanet!: any;
   @Output() deactivationDetails = new EventEmitter<boolean>();
   modalPlanetData: any = {};
