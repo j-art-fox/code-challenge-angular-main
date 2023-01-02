@@ -58,28 +58,9 @@ export class JumbotronComponent implements OnInit {
         console.log(Error);
       },
       // complete: () => {
-      //   console.log('this happens after the call is finished');
+      //   console.log('optional method for after "next"');
       // },
     });
-
-    // this.planetsService.getPlanets().subscribe((Data: any) => {
-    //   this.showSpinner = false;
-    //   let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
-    //   tempData = Data.results;
-
-    //   tempData.sort(function (a: any, b: any) {
-    //     if (a.name.toLowerCase() < b.name.toLowerCase()) {
-    //       return -1;
-    //     }
-    //     if (a.name.toLowerCase() > b.name.toLowerCase()) {
-    //       return 1;
-    //     }
-    //     return 0;
-    //   });
-
-    //   this.planets = tempData;
-    //   return (this.showSpinner = false);
-    // });
   }
 
   activatePlanet(event: any) {
