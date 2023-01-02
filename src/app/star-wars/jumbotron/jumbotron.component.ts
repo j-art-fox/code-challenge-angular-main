@@ -34,30 +34,64 @@ export class JumbotronComponent implements OnInit {
 
   ngOnInit(): void {
     // GETS and SORTS data from API
-    this.planetsService.getPlanets().subscribe((Data: any) => {
-      this.showSpinner = false;
-      let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
-      tempData = Data.results;
 
-      tempData.sort(function (a: any, b: any) {
-        if (a.name.toLowerCase() < b.name.toLowerCase()) {
-          return -1;
-        }
-        if (a.name.toLowerCase() > b.name.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      });
+    this.planetsService.getPlanets().subscribe({
+      next: (Data: any) => {
+        this.showSpinner = false;
+        let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
+        tempData = Data.results;
 
-      this.planets = tempData;
-      return (this.showSpinner = false);
+        tempData.sort(function (a: any, b: any) {
+          if (a.name.toLowerCase() < b.name.toLowerCase()) {
+            return -1;
+          }
+          if (a.name.toLowerCase() > b.name.toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        });
+
+        this.planets = tempData;
+        return (this.showSpinner = false);
+      },
+      error: (Error: any) => {
+        console.log(Error);
+      },
+      // complete: () => {
+      //   console.log('this happens after the call is finished');
+      // },
     });
+
+    // this.planetsService.getPlanets().subscribe((Data: any) => {
+    //   this.showSpinner = false;
+    //   let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
+    //   tempData = Data.results;
+
+    //   tempData.sort(function (a: any, b: any) {
+    //     if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    //       return -1;
+    //     }
+    //     if (a.name.toLowerCase() > b.name.toLowerCase()) {
+    //       return 1;
+    //     }
+    //     return 0;
+    //   });
+
+    //   this.planets = tempData;
+    //   return (this.showSpinner = false);
+    // });
+  }
+
+  activatePlanet(event: any) {
+    this.showPlanetDetails(event);
+    this.activatePanel();
   }
 
   activatePanel() {
     this.activationDetails.emit(true);
     console.log('here');
   }
+
   showPlanetDetails(event: any) {
     let target = event.target;
     let selectedPlanet: {} = {};

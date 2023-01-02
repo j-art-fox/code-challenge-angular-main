@@ -26,21 +26,17 @@
       >
         <li class="hover:shadow-amber-100" *ngFor="let p of planets">
           <div class="flex flex-col justify-center mx-2 mt-2">
-            <a
-              class="cursor-pointer"
-              (click)="activatePanel()"
-              (click)="showPlanetDetails($event)"
-            >
+            <a class="cursor-pointer" (click)="activatePlanet($event)">
               <img
                 class="(default size) h-6 hidden md:flex md:h-20 lg:h-24 xl:h-28 xl:w-28 mx-auto shadow-lg ease-in-out duration-200 hover:scale-110 hover:brightness-110"
                 src="assets/images/{{ p.name }}.png"
                 id="{{ p.name }}"
+                alt="{{ p.name }}"
               />
             </a>
             <button
               class="md:text-md xl:text-2xl p-1 bg-slate-900 min-w-full bg-opacity-60 md:rounded-md xl:rounded-md font-chakrapetch font-medium border-1 border-yellow-300 mt-2 hover:text-white hover:bg-yellow-500"
-              (click)="activatePanel()"
-              (click)="showPlanetDetails($event)"
+              (click)="activatePlanet($event)"
               name="{{ p.name }}"
             >
               {{ p.name }}
@@ -69,8 +65,7 @@
     <ul class="flex justify-center shadow-md" *ngFor="let planet of planets">
       <button
         id="{{ planet.name }}"
-        (click)="showPlanetDetails($event)"
-        (click)="activatePanel()"
+        (click)="activatePlanet($event)"
         class="w-full h-full font-chakrapetch tracking-wide font-bold p-1 hover:scale-105 hover:bg-teal-200 hover:bg-opacity-40"
       >
         {{ planet.name }}
