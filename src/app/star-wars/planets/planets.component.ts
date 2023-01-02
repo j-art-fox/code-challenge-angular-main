@@ -12,12 +12,12 @@ export class PlanetsComponent implements OnInit {
 
   constructor(private planetsService: PlanetsService) {}
 
+  // GETS and SORTS data from API ON INIT
   ngOnInit(): void {
-    // GETS and SORTS data from API
     this.planetsService.getPlanets().subscribe((Data: any) => {
       let tempData: any = [{ name: 'Boyd' }, { name: 'Aaron' }];
       tempData = Data.results;
-
+      // SORT FUNCTION THAT ALPHABATIZES DATA
       tempData.sort(function (a: any, b: any) {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;

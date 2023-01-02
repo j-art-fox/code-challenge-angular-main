@@ -1,13 +1,12 @@
+<!-- MODAL -->
 <app-planet-modal
   [planetActivated]="planetActivated"
-  [requestedPlanet]="element"
+  [requestedPlanet]="requestedPlanet"
   (deactivationDetails)="emitDeactivation()"
 ></app-planet-modal>
 
 <div class="hidden md:flex justify-center py-8">
   <div class="w-4/5 flex flex-wrap justify-between">
-    <!-- MODAL -->
-
     <!-- ABOUT -->
     <div
       class="hidden md:flex flex-col justify-center text-zinc-700 shadow-lg bg-gray-100 rounded-xl mb-4"
@@ -85,18 +84,18 @@
   </div>
 </div>
 
-<!-- dropdown menu for mobile -->
+<!-- ABOUT SECTION FOR MOBILE -->
 <div
   class="my-10 flex flex-col bg-gradient-to-b from-zinc-100 to-zinc-200 shadow-lg bg-opacity-50 md:hidden rounded-xl hover:bg-yellow-100"
 >
   <button
-    (click)="displayDropdown()"
+    (click)="displayAboutDropdown()"
     class="text-xl w-full p-2 mx-auto font-bungee md:text-2xl lg:text-4xl my-2 text-teal-600 hover:text-yellow-500"
   >
     About
   </button>
   <div
-    *ngIf="dropDownDisplayed"
+    *ngIf="aboutDropdownDisplayed"
     class="p-2 bg-gradient-to-b from-zinc-100 to-zinc-300"
   >
     <p class="indent-5">

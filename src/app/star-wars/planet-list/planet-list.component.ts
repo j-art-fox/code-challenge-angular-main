@@ -5,15 +5,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './planet-list.component.html',
 })
 export class PlanetListComponent implements OnInit {
+  // FOR FULL PLANET LIST
   @Input() planetData: any = [];
-  @Input('requestedPlanet') element!: any;
+  @Input() requestedPlanet!: any;
   @Input() planetActivated: boolean = false;
   @Output() deactivationDetails = new EventEmitter<boolean>();
 
   fullList: boolean = false;
   viewButton: string = 'View All Planets';
-
-  dropDownDisplayed: boolean = true;
+  aboutDropdownDisplayed: boolean = true;
 
   constructor() {}
   ngOnInit(): void {}
@@ -26,8 +26,9 @@ export class PlanetListComponent implements OnInit {
     }
     this.fullList = !this.fullList;
   }
-  displayDropdown() {
-    this.dropDownDisplayed = !this.dropDownDisplayed;
+
+  displayAboutDropdown() {
+    this.aboutDropdownDisplayed = !this.aboutDropdownDisplayed;
   }
 
   emitDeactivation() {
